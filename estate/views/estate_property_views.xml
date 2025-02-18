@@ -6,6 +6,7 @@
             <list>
                 <field name="name" string="Title"/>
                 <field name="postcode"/>
+                <field name="tag_ids" widget="many2many_tags" string="Tags"/>
                 <field name="bedrooms"/>
                 <field name="living_area" string ="Living Area (sqm)"/>
                 <field name="expected_price"/>
@@ -26,8 +27,10 @@
                             <field name="name" />
                         </h1>
                     </div>
+                    <field name="tag_ids" widget="many2many_tags"/>
                     <group>
                         <group>
+                            <field name="property_type_id" />
                             <field name="postcode" />
                             <field name="date_availability" />
                         </group>
@@ -48,6 +51,15 @@
                                 <field name="garden_area" />
                                 <field name="garden_orientation" />
                                 <field name="state" />
+                            </group>
+                        </page>
+                        <page string="Offers">
+                            <field name="offer_ids" />
+                        </page>
+                        <page string="Other Info">
+                            <group>
+                                <field name="salesman" />
+                                <field name="buyer" />
                             </group>
                         </page>
                     </notebook>
